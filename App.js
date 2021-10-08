@@ -2,20 +2,8 @@ import * as React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { HomeScreenComponent } from './pages/home/home';
 import 'react-native-gesture-handler';
-
-function HomeScreen(props) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-      <TouchableHighlight
-        onPress={() => props.navigation.navigate('Profile')}
-      >
-        <Text>Profile</Text>
-      </TouchableHighlight>
-    </View>
-  );
-}
 
 function ProfileScreen(props) {
   return (
@@ -36,7 +24,7 @@ function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Home" component={HomeScreenComponent} />
         <Drawer.Screen name="Profile" component={ProfileScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
